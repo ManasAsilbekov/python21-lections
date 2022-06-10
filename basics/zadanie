@@ -1,0 +1,65 @@
+"""
+  По теме: Строки
+"""
+"""
+1) Напишите программу, которая будет запрашивать пользовательские данные: имя, фамилию, возраст. Далее программа должна проделать следующие операции: в имени убрать все буквы ‘a’(если они есть), в фамилии - разделить все буквы разделителем *. В конце программа выдает вам объединенную строку, состоящую из полученных имени и фамилии, при этом данная строка должна повторяться столько раз, сколько составляет возраст пользователя.
+
+Например:
+Ввод: Введите имя, фамилию и возраст через пробел: John Snow 4
+Вывод: JоhnS*n*o*wJоhnS*n*o*wJоhnS*n*o*wJоhnS*n*o*w
+
+data = (input('Введите имя, фамилию и возраст через пробел:').split())
+name =data[0]
+last_time = data[1]
+age = data[-1]
+
+name = name.lower().replace('a', '')
+last_time = '*'.join(list(last_time))
+print((name + last_time) * int(age))
+
+silbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*ssilbekovM*a*n*a*s
+"""
+
+
+""""
+2) Напишите программу, которая высчитывает количество гласных букв в введенной пользователем строке. И программа выдает вам следующее предложение: В вашей строке насчитано n гласных букв.
+
+Например:
+Ввод: Введите строку: I love Makers Bootcamp!
+Вывод: В вашей строке насчитано 8 гласных букв
+
+Примечание: не использовать конкатенацию
+
+
+# task2
+x = str(input('Введите строку:'))
+y = list(x)
+a = y.count('a')
+i = y.count('i')
+o = y.count('o')
+u = y.count('u')
+e = y.count('e')
+r = y.count('A')
+t = y.count('I')
+b = y.count('O')
+c = y.count('U')
+k = y.count('E')
+sum = a + i + o + u + e + r + t + b + c + k
+strr = 'В вашей строке насчитано {} гласных букв'
+print(strr.format(sum))
+
+"""
+"""
+3) Напишите программу, которая просит пользователя ввести свой юзернейм (одним словом) и генерирует пароль из юзернейма, добавив в конец строки символ $, в середину символ &, и заменив строчные буквы на заглавные и наоборот.
+
+
+Например:
+Ввод: Введите юзернейм: JohnSnow
+Вывод: Вам сгенерирован пароль: jOHN&sNOW$
+"""
+
+username = (input('Введите юзернейм'))
+center = int(len(username)/2)
+new_username = username [:center] + '&' + username[center] + '$'
+password = new_username.swapcase()
+print(f'Вам сгенерирован пароль', password)
