@@ -1,0 +1,26 @@
+number_1 = int(input('Enter your first number:  '))
+number_2 = int(input('Enter your second number: '))
+number_3 = input('Действия')
+if number_3 == '+':
+    result = number_1 + number_2
+    print(result)
+elif number_3 == '-':
+    result = number_1 - number_2
+    print(result)
+elif number_3 == '*':
+    result = number_1 * number_2
+    print(result)
+elif number_3 == '/':
+    result = number_1 / number_2
+    print(result)
+elif number_3 == '%':
+    result = number_1 % number_2
+    print(result)
+elif number_3 == '**':
+    result = number_1 ** number_2
+    print(result)
+elif number_3 == '//':
+    result = number_1 // number_2
+    print(result)
+else:
+    print('Данной операции нет в системе')
