@@ -1,0 +1,6 @@
+from random import randint
+N = 10
+arr = []
+for i in range(N):
+    arr.append(randint(1, 10))
+print(arr)
