@@ -1,6 +1,4 @@
-from random import randint
-N = 10
-arr = []
-for i in range(N):
-    arr.append(randint(1, 10))
-print(arr)
+name_of_friends = ['aza', 'adi', 'maks', 'rus', 'make']
+for i in range(len(name_of_friends)):
+    name_of_friends[i]+=5
+    print(mname_of_friends)
