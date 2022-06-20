@@ -1,4 +1,2 @@
-name_of_friends = ['aza', 'adi', 'maks', 'rus', 'make']
-for i in range(len(name_of_friends)):
-    name_of_friends[i]+=5
-    print(mname_of_friends)
+text = input("goremyka: ").lower()
+print(text)
