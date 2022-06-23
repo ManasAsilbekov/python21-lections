@@ -1,0 +1,17 @@
+def func1():
+    side = int(input("Введите сторону квадрата: "))
+    perimetr = 4*side
+    ploshad = side*side
+    diogonal = 2**(1/2)*side
+    return (perimetr, ploshad, diogonal)
+
+print(func1())
+
+
+
+
+
+
+
+
+
