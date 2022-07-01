@@ -1,17 +1,157 @@
-def func1():
-    side = int(input("Введите сторону квадрата: "))
-    perimetr = 4*side
-    ploshad = side*side
-    diogonal = 2**(1/2)*side
-    return (perimetr, ploshad, diogonal)
+# def func1():
+#     side = int(input("Введите сторону квадрата: "))
+#     perimetr = 4*side
+#     ploshad = side*side
+#     diogonal = 2**(1/2)*side
+#     return (perimetr, ploshad, diogonal)
 
-print(func1())
-
-
+# print(func1())
 
 
 
 
 
 
+#изменяемые dict,
+#неизменяемы "upper"
+#Дикшинери
+#update - добавляет элемент и обновляет 
+# pop - удаляет ключ
+# items -  возврашет список внутри которгр typle,  ключ и значения
+# get - принимает ключи
+#индекс порядковый номер
+#компрехеншон 
+#сет  без ключей 
+#** возведение степени
 
+3) Создайте список с буквами. Напишите программу, которая склеит все буквы с вписке в строку. Не использовать метод join() и циклы.
+from functools import reduce
+list_ = ['a','z','a','z','a','z',]
+a = reduce(lambda x, y : x + y, list_)
+print(a)
+
+"""
+1) Создайте список, который будет содержать различные типы данных. Напишите программу, которая будет находить корень чисел, содержащихся в созданном списке. Используйте встроенные функции.
+"""
+# писать код здесь
+from math import sqrt
+list_ = [4, " abc", 3, 12, True, 2.5, False] 
+new_list = list(map(lambda x: round (sqrt(x)), filter(lambda y: type(y) == int, list_)))
+print(new_list)
+num = 4321
+if str(num)[0] > str(num)[1] and str(num)[1] > str(num)[2] and str(num)[2] > str(num)[3]:
+    print('yes')
+else:
+        print('no')
+"""
+2) Реализуйте следующую программу: есть студенты, которые сдали экзамен. Вам необходимо сохранить имена и баллы тех студентов, которые не прошли проходной балл (<60). Далее каждому студенту вам необходимо отправить письмо, которое говорит о том, что этого студента собираются отчислить.
+"""
+# писать код здесь
+dict =  [                                                                        
+            {'name': 'Jibek', 'point': 99},
+            {'name': 'Daniel', 'point': 11},
+            {'name': 'Manas', 'point': 100},
+            {'name': 'Imran', 'point': 1},
+    ]
+list_ = list(filter(lambda x: x['point'] < 60, dict))
+names = list(map(lambda x: x['name'],list_))
+point = list(map(lambda x: x['point'],list_))
+zipped_list = list(zip(names,point))
+expelled_list = list(map(lambda x: f'You are gonna be expelled:{x[0]}', zipped_list))
+print(expelled_list)
+
+"""
+1) Есть глобальная переменная, которая обозначает размер самой главной первой матрешки. Напишите функцию, в которой к размеру главной матрешки прибавляется размер второй матрешки, который определен в этой функции. То же самое сделайте и с третьей функцией внутри второй. Верните результат сложения.
+"""
+# писать код здесь
+size_global_matryoshka = 10
+
+def two_matryoshka():
+
+   size_matryoshka_two = 5
+
+   def three_matryoshka():
+
+       size_matryoshka_three = 3
+
+       return size_matryoshka_three + size_matryoshka_two
+
+   return three_matryoshka() + size_global_matryoshka
+
+print(two_matryoshka())
+"""
+2) Есть глобальная переменная, которая содержит пустой список. Вам необходимо написать функции, одна из которых add() - добавляет в этот список имена, которые вводит пользователь. А другая функция remove() - удаляет эти имена из списка по индексу, который вводит пользователь. Вызовите функции в рандомном порядке 10 раз и в конце выведите список.
+"""
+# писать код здесь
+from random import choice
+ 
+def add():
+    global c
+    c.append(input('Введите имя '))
+ 
+def remove():
+    global c
+    if not len(c): return
+    del c[int(input(f'Удалить имя от 0 до {len(c) - 1} '))]
+ 
+c = []
+for i in range(10):
+    choice([add, remove])()
+print(c)
+
+
+"""
+1) Напишите функцию get_info, которая запрашивает у пользователя имя и фамилию, последовательно. Далее внутри get_info вызовите другую функцию generate_password, которая будет генерировать пароль при помощи конкатенации имени и фамилии пользователя и рандомных 7 чисел (в промежутке от 0 до 9). В конце функция get_info возвращает пользователю сгенерированный пароль.
+"""
+# писать код здесь
+import random
+def get_info(i, f):
+    generate_password(i, f)
+  
+def generate_password(i, f):
+    c = i + f
+    for i in range(1, 8):
+        r = random.randint(0, 9)
+        c = c + str(r)
+    print(c)
+get_info(input(), input())
+"""
+2) Напишите калькулятор на функциях. У вас должна быть основная функция get_data, которая запрашивает два числа, и действие (сложение, вычитание, умножение, деление). И в зависимости от выбранного действия get_data должна вызывать ту или иную функцию, в которой будет прописан алгоритм выполнения действий. В конце выдается результат через функцию result.
+"""
+# писать код здесь
+def get_data(a, b, c):
+    if c in '+-/*':
+        result(a,b,c)
+    else:
+        print('Введите правильное действие!')
+    
+
+def plus(a, b):
+    print(a+b)
+
+def minus(a, b):
+    print(a-b)
+
+def mult(a, b):
+    print(a*b)
+
+def div(a ,b):
+    print(a/b)
+
+def result(a, b, c):
+    if c == '+':
+        plus(a, b)
+    elif c == '-':
+        minus(a, b)
+    elif c == '*':
+        mult(a, b)
+    elif c == '/':
+        div(a, b)
+"""
+3) Напишите функцию, которая будет принимать 2 обязательных параметра: вкус мороженого и размер. И также функция может принимать необязательные параметры, которые могут выступать в качестве топпинга к мороженому. Выдайте результат
+"""
+# писать код здесь
+def ice_cream(a, b, c = (input('Выберите топпинг:  '))):
+    print(a, b, c)
+
+ice_cream(input('Выберите вкус мороженого(Клубничный/Банановый/Фисташковый):  '), input('Выберите размер(Маленький/Средний/Большой):  ') )
